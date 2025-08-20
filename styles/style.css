@@ -1,0 +1,221 @@
+:root {
+  --purple1: #111112;
+  --purple2: #5837df;
+  --light-purple: #f6f4fc;
+  --text-dark: #000;
+  --text-light: #555;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: var(--text-dark);
+}
+
+/* Navbar */
+header {
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: transparent;
+}
+header .logo {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #efeff0;
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #efeff0; /* bright blue for visibility */
+  font-weight: bold;
+}
+nav a:hover {
+  color: #0056b3; /* darker blue on hover */
+}
+nav .btn {
+  background: linear-gradient(135deg, var(--purple1), var(--purple2));
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 25px;
+}
+nav .btn:hover {
+  opacity: 0.9;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--purple1), var(--purple2));
+  color: #fff;
+  overflow: hidden;
+  padding-top: 80px; /* spacing so navbar doesn't cover content */
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 50%;
+  padding: 60px 40px;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.hero-text h3 {
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+.hero-text .btn {
+  background: #fff;
+  color: var(--purple2);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 25px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.hero-text .btn:hover {
+  background: #f0f0f0;
+}
+
+.hero img {
+  flex: 1;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* About Section */
+#about {
+  padding: 80px 40px;
+  background: #fff;
+}
+#about h2 {
+  margin-bottom: 20px;
+  color: var(--purple2);
+}
+#about p {
+  max-width: 800px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: var(--text-light);
+}
+#about .btn {
+  background: linear-gradient(135deg, var(--purple1), var(--purple2));
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+}
+#about .btn:hover {
+  opacity: 0.9;
+}
+
+/* Services Section */
+#services {
+  padding: 80px 40px;
+  background: var(--light-purple);
+}
+#services h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  color: var(--purple2);
+}
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+}
+.card i {
+  display: block;
+  color: var(--purple2);
+  margin-bottom: 10px;
+}
+.card h3 {
+  margin-bottom: 10px;
+  color: var(--purple2);
+}
+.card p {
+  color: var(--text-light);
+}
+
+/* Portfolio Section */
+#portfolio {
+  padding: 80px 40px;
+  background: #fff;
+}
+#portfolio h2 {
+  color: var(--purple2);
+  margin-bottom: 30px;
+  text-align: center;
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.portfolio-item {
+  background: #eee;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Contact Section */
+#contact {
+  padding: 80px 40px;
+  background: var(--light-purple);
+}
+#contact h2 {
+  color: var(--purple2);
+  text-align: center;
+  margin-bottom: 20px;
+}
+#contact p {
+  text-align: center;
+  color: var(--text-dark);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--purple1), var(--purple2));
+  color: #fff;
+}
