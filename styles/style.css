@@ -1,3 +1,4 @@
+/* ================= ROOT VARIABLES ================= */
 :root {
   --purple1: #111112;
   --purple2: #5837df;
@@ -6,14 +7,16 @@
   --text-light: #555;
 }
 
+/* ================= GENERAL STYLES ================= */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: #fff;
   color: var(--text-dark);
 }
 
-/* Navbar */
+/* ================= NAVBAR ================= */
+/* Default navbar (transparent) */
 header {
   padding: 15px 40px;
   display: flex;
@@ -24,6 +27,22 @@ header {
   width: 100%;
   z-index: 10;
   background: transparent;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Navbar after scroll */
+header.scrolled {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Navbar text after scroll */
+header.scrolled nav a {
+  color: #333;
+}
+header.scrolled {
+  background: #fff; /* solid background on scroll */
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
 }
 header .logo {
   font-weight: bold;
@@ -33,11 +52,11 @@ header .logo {
 nav a {
   margin: 0 15px;
   text-decoration: none;
-  color: #efeff0; /* bright blue for visibility */
+  color: #efeff0; 
   font-weight: bold;
 }
 nav a:hover {
-  color: #0056b3; /* darker blue on hover */
+  color: #0056b3;
 }
 nav .btn {
   background: linear-gradient(135deg, var(--purple1), var(--purple2));
@@ -49,7 +68,7 @@ nav .btn:hover {
   opacity: 0.9;
 }
 
-/* Hero Section */
+/* ================= HERO SECTION ================= */
 .hero {
   display: flex;
   align-items: center;
@@ -58,26 +77,22 @@ nav .btn:hover {
   background: linear-gradient(135deg, var(--purple1), var(--purple2));
   color: #fff;
   overflow: hidden;
-  padding-top: 80px; /* spacing so navbar doesn't cover content */
+  padding-top: 80px; /* avoid overlap with navbar */
 }
-
 .hero-text {
   flex: 1;
   max-width: 50%;
   padding: 60px 40px;
   z-index: 2;
 }
-
 .hero-text h1 {
   font-size: 3em;
   margin-bottom: 10px;
 }
-
 .hero-text h3 {
   font-weight: normal;
   line-height: 1.5;
 }
-
 .hero-text .btn {
   background: #fff;
   color: var(--purple2);
@@ -90,7 +105,6 @@ nav .btn:hover {
 .hero-text .btn:hover {
   background: #f0f0f0;
 }
-
 .hero img {
   flex: 1;
   width: 100%;
@@ -101,7 +115,7 @@ nav .btn:hover {
   box-shadow: none;
 }
 
-/* About Section */
+/* ================= ABOUT SECTION ================= */
 #about {
   padding: 80px 40px;
   background: #fff;
@@ -128,7 +142,7 @@ nav .btn:hover {
   opacity: 0.9;
 }
 
-/* Services Section */
+/* ================= SERVICES SECTION ================= */
 #services {
   padding: 80px 40px;
   background: var(--light-purple);
@@ -168,7 +182,7 @@ nav .btn:hover {
   color: var(--text-light);
 }
 
-/* Portfolio Section */
+/* ================= PORTFOLIO SECTION ================= */
 #portfolio {
   padding: 80px 40px;
   background: #fff;
@@ -197,7 +211,7 @@ nav .btn:hover {
   box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
 }
 
-/* Contact Section */
+/* ================= CONTACT SECTION ================= */
 #contact {
   padding: 80px 40px;
   background: var(--light-purple);
@@ -212,7 +226,7 @@ nav .btn:hover {
   color: var(--text-dark);
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
 footer {
   text-align: center;
   padding: 20px;
