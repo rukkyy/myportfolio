@@ -14,6 +14,9 @@
   <!-- Navbar -->
   <header>
     <div class="logo">Rukaya.</div>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -41,7 +44,7 @@
   <section id="about">
     <h2>About Me</h2>
     <p>I’m Rukaya Mohammed, a front-end designer and freelancer focused on crafting clean and responsive interfaces. I care about accessibility, performance, and bringing ideas to life with delightful details.</p>
-    <a href="./Rukaya_Mohammed_CV 2-1.pdf" target="_blank" class="btn">Download CV</a>
+    <a href="cv.pdf" target="_blank" class="btn">Download CV</a>
   </section>
 
   <!-- Services -->
@@ -87,13 +90,28 @@
   <footer>
     &copy; 2025 Rukaya Mohammed | All Rights Reserved
   </footer>
-  <script>
-  // Navbar scroll effect (inline test)
-  window.addEventListener("scroll", function() {
-    const header = document.querySelector("header");
-    header.classList.toggle("scrolled", window.scrollY > 50);
-  });
-</script>
+    <script>
+      // Navbar scroll effect
+      window.addEventListener("scroll", function() {
+        const header = document.querySelector("header");
+        header.classList.toggle("scrolled", window.scrollY > 50);
+      });
+
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const nav = document.querySelector("nav");
+      menuToggle.addEventListener("click", function() {
+        nav.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
+      // Close menu on link click (mobile)
+      nav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+          menuToggle.classList.remove("active");
+        });
+      });
+    </script>
 </body>
 </html>
 </body>

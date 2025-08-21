@@ -20,7 +20,7 @@ body {
 header {
   padding: 15px 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   position: fixed;
   top: 0;
@@ -28,6 +28,25 @@ header {
   z-index: 10;
   background: transparent;
   transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+header {
+  gap: 20px;
+}
+nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+nav a {
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  margin: 0 10px;
+}
+nav a:hover {
+  background: var(--light-purple);
+  color: var(--purple2);
 }
 
 /* Navbar after scroll */
@@ -232,4 +251,187 @@ footer {
   padding: 20px;
   background: linear-gradient(135deg, var(--purple1), var(--purple2));
   color: #fff;
+}
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 2em;
+  color: var(--purple2);
+  margin-left: auto;
+  z-index: 20;
+}
+
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 18px;
+  }
+  nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0 18px 0;
+    box-shadow: 0 8px 32px rgba(88,55,223,0.08);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(.77,0,.18,1);
+  }
+  nav.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  nav a {
+    color: var(--purple2);
+    padding: 12px 24px;
+    width: 90%;
+    border-bottom: 1px solid #eee;
+    font-weight: 500;
+    font-size: 1.1em;
+    text-align: center;
+  margin: 8px auto;
+    border-radius: 10px;
+  }
+  nav a:last-child {
+    border-bottom: none;
+  }
+  nav .btn {
+    margin: 12px auto;
+    width: 80%;
+    display: block;
+  }
+  .menu-toggle.active i {
+    color: var(--purple1);
+    transform: rotate(90deg);
+    transition: transform 0.3s;
+  }
+}
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 1200px) {
+  .hero-text {
+    max-width: 60%;
+    padding: 40px 20px;
+  }
+  .service-cards,
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    padding-top: 100px;
+    text-align: center;
+  }
+  .hero-text {
+    max-width: 100%;
+    padding: 30px 10px;
+  }
+  .hero img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 8px 32px rgba(88,55,223,0.15);
+  }
+  .service-cards,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  header {
+    flex-direction: column;
+    padding: 10px 15px;
+    align-items: flex-start;
+  }
+  nav {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  nav a {
+    margin: 0 8px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+  header {
+    padding: 8px 5px;
+  }
+  .logo {
+    font-size: 1em;
+  }
+  .hero-text h1 {
+    font-size: 2em;
+  }
+  .hero-text h3 {
+    font-size: 1em;
+  }
+  .hero img {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 15px;
+  }
+  #about, #services, #portfolio, #contact {
+    padding: 40px 10px;
+  }
+  .card, .portfolio-item {
+    padding: 12px;
+    font-size: 0.95em;
+  }
+  footer {
+    padding: 12px;
+    font-size: 0.9em;
+  }
+}
+
+/* Unique visual touches */
+.hero-text h1 span {
+  color: var(--purple2);
+  text-shadow: 0 2px 8px rgba(88,55,223,0.15);
+  letter-spacing: 2px;
+}
+.portfolio-item {
+  background: linear-gradient(135deg, #f6f4fc 60%, #5837df 100%);
+  color: #5837df;
+  font-weight: bold;
+  border: 2px solid #5837df22;
+}
+.portfolio-item:hover {
+  background: linear-gradient(135deg, #5837df 60%, #f6f4fc 100%);
+  color: #fff;
+}
+.card {
+  border: 2px solid #5837df11;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: -40px; left: -40px;
+  width: 80px; height: 80px;
+  background: radial-gradient(circle, #5837df33 40%, transparent 70%);
+  z-index: 0;
+}
+.card h3, .card i {
+  position: relative;
+  z-index: 1;
 }
