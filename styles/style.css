@@ -200,6 +200,86 @@ nav .btn:hover {
   box-shadow: 0 8px 32px rgba(88,55,223,0.22);
 }
 
+
+/* ================= SKILLS SECTION ================= */
+#skills {
+  padding: 80px 40px;
+  background: linear-gradient(135deg, #f6f4fc 80%, #5837df11 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(88,55,223,0.08);
+  margin: 40px auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+#skills h2 {
+  margin-bottom: 32px;
+  color: var(--purple2);
+  font-size: 3em;
+  text-shadow: 0 2px 12px rgba(88,55,223,0.12);
+  font-weight: 700;
+}
+
+.skills-container {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(88,55,223,0.10);
+  padding: 32px 24px;
+  max-width: 260px;
+  flex: 1 1 240px;
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid #5837df11;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(88,55,223,0.18);
+}
+
+.skill::before {
+  content: "";
+  position: absolute;
+  top: -40px; left: -40px;
+  width: 80px; height: 80px;
+  background: radial-gradient(circle, #5837df33 40%, transparent 70%);
+  z-index: 0;
+}
+
+.skill h3 {
+  color: var(--purple2);
+  margin-bottom: 16px;
+  font-size: 1.4em;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.skill ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.skill ul li {
+  margin: 8px 0;
+  color: var(--text-dark);
+  font-size: 1.05em;
+  font-weight: 500;
+}
+
+
 /* ================= SERVICES SECTION ================= */
 #services {
   padding: 80px 40px;
@@ -209,97 +289,162 @@ nav .btn:hover {
   margin: 40px auto;
   max-width: 900px;
 }
+
 #services h2 {
-  margin-bottom: 30px;
-  text-align: center;
+  margin-bottom: 32px;
   color: var(--purple2);
-  font-size: 2.5em;
+  font-size: 3em; /* Matches About Me and Hero */
   text-shadow: 0 2px 12px rgba(88,55,223,0.12);
   font-weight: 700;
-}
-.service-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-top: 24px;
-}
-.card {
-  background: linear-gradient(90deg, #fff 80%, #f6f4fc 100%);
-  padding: 28px 20px;
-  border-radius: 16px;
   text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 18px rgba(88,55,223,0.10);
-  font-size: 1.15em;
-  font-weight: 500;
-}
-.card:hover {
-  transform: scale(1.04) translateY(-5px);
-  box-shadow: 0 8px 32px rgba(88,55,223,0.18);
-}
-.card i {
-  display: block;
-  color: var(--purple2);
-  margin-bottom: 10px;
-}
-.card h3 {
-  margin-bottom: 10px;
-  color: var(--purple2);
-  font-size: 1.3em;
-  font-weight: 700;
-  text-shadow: 0 2px 8px rgba(88,55,223,0.10);
-}
-.card p {
-  color: #222;
-  font-size: 1.08em;
-  background: rgba(255,255,255,0.7);
-  padding: 10px 14px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(88,55,223,0.05);
 }
 
-/* ================= PORTFOLIO SECTION ================= */
-#portfolio {
+.service-cards {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(88,55,223,0.10);
+  padding: 32px 24px;
+  max-width: 280px;
+  flex: 1 1 260px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(88,55,223,0.18);
+}
+
+.card i {
+  color: var(--purple2);
+  margin-bottom: 16px;
+  font-size: 2.5em;
+}
+
+.card h3 {
+  font-size: 1.5em;
+  color: var(--purple2);
+  margin-bottom: 16px;
+  font-weight: 600;
+  text-shadow: 0 1px 8px rgba(88,55,223,0.10);
+}
+
+.card p {
+  font-size: 1.15em;
+  color: #222;
+  line-height: 1.8;
+  margin-bottom: 0;
+  font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
+}
+
+/* PROJECTS SECTION */
+#projects {
   padding: 80px 40px;
   background: linear-gradient(135deg, #f6f4fc 80%, #5837df11 100%);
   border-radius: 18px;
   box-shadow: 0 4px 32px rgba(88,55,223,0.08);
   margin: 40px auto;
-  max-width: 900px;
+  max-width: 1100px;
 }
-#portfolio h2 {
+
+#projects h2 {
+  margin-bottom: 32px;
   color: var(--purple2);
-  margin-bottom: 30px;
-  text-align: center;
-  font-size: 2.5em;
+  font-size: 3em; /* Matches Services & About Me */
   text-shadow: 0 2px 12px rgba(88,55,223,0.12);
   font-weight: 700;
+  text-align: center;
 }
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-top: 24px;
+
+.projects-grid {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.portfolio-item {
-  background: linear-gradient(90deg, #fff 80%, #f6f4fc 100%);
-  height: 200px;
+
+/* Project Card */
+.project-item {
+  position: relative;
+  background: #fff;
   border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(88,55,223,0.10);
+  padding: 24px;
+  max-width: 300px;
+  flex: 1 1 280px;
+  text-align: center;
+  text-decoration: none;
+  color: #222;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.project-item:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(88,55,223,0.18);
+}
+
+.project-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.project-item h3 {
+  font-size: 1.5em;
+  color: var(--purple2);
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-shadow: 0 1px 8px rgba(88,55,223,0.10);
+}
+
+.project-item p {
+  font-size: 1em;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* GitHub Icon */
+.github-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #fff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 18px rgba(88,55,223,0.10);
-  font-size: 1.15em;
-  font-weight: 500;
-  color: #222;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 2;
+  transition: transform 0.2s, background 0.2s;
 }
-.portfolio-item:hover {
-  transform: scale(1.04) translateY(-5px);
-  box-shadow: 0 8px 32px rgba(88,55,223,0.18);
-  background: linear-gradient(90deg, #a084ee 0%, #5837df 100%);
+
+.github-icon i {
+  font-size: 1.4em;
+  color: #5837df;
+}
+
+.project-item:hover .github-icon {
+  background: #5837df;
+  transform: scale(1.1);
+}
+
+.project-item:hover .github-icon i {
   color: #fff;
 }
+
+
 
 /* ================= CONTACT SECTION ================= */
 #contact {
